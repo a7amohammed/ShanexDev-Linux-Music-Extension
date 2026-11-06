@@ -41,7 +41,7 @@ const MPRIS2_IFACE = `
   </interface>
 </node>`;
 
-const PlayerProxy = Gio.DBus.makeProxyWrapper(MPRIS2_IFACE);
+const PlayerProxy = Gio.DBusProxy.makeProxyWrapper(MPRIS2_IFACE);
 
 export class MprisController {
     constructor(onStateChanged) {
