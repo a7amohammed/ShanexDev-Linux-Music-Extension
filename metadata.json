@@ -1,0 +1,7 @@
+{
+  "uuid": "music-ext@mohammedsoliman",
+  "name": "Floating Music",
+  "description": "A lightweight floating music player with synced lyrics, universal search, and a YouTube Music library.",
+  "shell-version": ["51"],
+  "settings-schema": "org.gnome.shell.extensions.floating-music"
+}

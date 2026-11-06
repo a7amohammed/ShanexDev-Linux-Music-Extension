@@ -1,0 +1,12 @@
+<schemalist>
+  <schema id="org.gnome.shell.extensions.floating-music" path="/org/gnome/shell/extensions/floating-music/">
+    <key name="toggle-player" type="as">
+      <default>['&lt;Super&gt;m']</default>
+      <summary>Toggle the floating music player</summary>
+    </key>
+    <key name="debug-memory" type="b">
+      <default>false</default>
+      <summary>Log Shell RSS memory when opening a view</summary>
+    </key>
+  </schema>
+</schemalist>
