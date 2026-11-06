@@ -22,7 +22,7 @@ export class MusicWidget {
         this.actor.set_style('background-color: rgba(14, 16, 20, 0.76);');
 
         this._box = new St.BoxLayout({
-            vertical: true,
+            orientation: Clutter.Orientation.VERTICAL,
             x_expand: true,
             y_expand: true,
             style_class: 'floating-music-box',
@@ -90,7 +90,7 @@ export class MusicWidget {
         });
 
         this._meta = new St.BoxLayout({
-            vertical: true,
+            orientation: Clutter.Orientation.VERTICAL,
             style_class: 'floating-music-meta',
         });
         this._box.add_child(this._meta);
@@ -222,7 +222,7 @@ export class MusicWidget {
             this._viewActor.destroy();
 
         this._viewActor = new St.BoxLayout({
-            vertical: true,
+            orientation: Clutter.Orientation.VERTICAL,
             style_class: 'floating-music-view',
             visible: true,
         });
@@ -285,7 +285,10 @@ export class MusicWidget {
     _renderSearchResults(results) {
         if (!this._viewActor)
             return;
-        const list = new St.BoxLayout({vertical: true, style_class: 'floating-music-results'});
+        const list = new St.BoxLayout({
+            orientation: Clutter.Orientation.VERTICAL,
+            style_class: 'floating-music-results',
+        });
         for (const result of results || []) {
             const item = new St.Button({
                 label: `${result.title || 'Untitled'} — ${result.artist || 'Unknown artist'}`,
@@ -305,7 +308,10 @@ export class MusicWidget {
             hscrollbar_policy: St.PolicyType.NEVER,
             vscrollbar_policy: St.PolicyType.AUTOMATIC,
         });
-        const box = new St.BoxLayout({vertical: true, style_class: 'floating-music-lyrics'});
+        const box = new St.BoxLayout({
+            orientation: Clutter.Orientation.VERTICAL,
+            style_class: 'floating-music-lyrics',
+        });
         for (const line of lines || []) {
             const label = new St.Label({
                 text: line.text || ' ',
